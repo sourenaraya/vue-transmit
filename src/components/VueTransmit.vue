@@ -12,10 +12,9 @@
          @dragover.prevent.stop="handleDragOver"
          @dragleave="handleDragLeave"
          @drop.prevent.stop="handleDrop">
+		<slot name="files" v-bind="fileSlotBindings"></slot>
       <slot></slot>
     </div>
-    <slot name="files"
-          v-bind="fileSlotBindings"></slot>
     <input type="file"
            ref="hiddenFileInput"
            :multiple="multiple"
